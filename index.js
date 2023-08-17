@@ -6,10 +6,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.get("/", (req,res) => {
-    res.json("hello this is the backend")
-})
-
+//insert todo
 app.post("/todos" , async (req,res) => {
     try {
 
@@ -25,6 +22,7 @@ app.post("/todos" , async (req,res) => {
     }
 } )
 
+//get a todo
 app.get("/todos/:id", async(req,res) => {
     try {
         const {id} =  req.params;
@@ -35,6 +33,7 @@ app.get("/todos/:id", async(req,res) => {
     }
 })
 
+//update a todo
 app.put("/todos/:id" , async (req,res) => {
 
     try {
@@ -48,6 +47,7 @@ app.put("/todos/:id" , async (req,res) => {
     }
 })
 
+//delete a todo
 app.delete("/todos/:id", async (req,res) => {
     try {
         const {id}  =  req.params;
@@ -59,6 +59,7 @@ app.delete("/todos/:id", async (req,res) => {
     }
 })
 
+//get all todos
 app.get("/todos" , async (req,res) => {
 
     try {
